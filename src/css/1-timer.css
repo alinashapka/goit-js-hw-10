@@ -22,7 +22,7 @@
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
 }
-input {
+.timer-input {
   border: 1px solid #808080;
   border-radius: 4px;
   width: 272px;
@@ -36,18 +36,19 @@ input {
   color: #2e2f42;
   padding-left: 16px;
 }
-input:hover {
+.timer-input:hover {
   border-color: #000;
 }
-input:active {
+.timer-input:active {
   border-color: #4e75ff;
 }
-input:disabled {
+.timer-input:disabled {
   border-color: #808080;
   color: #808080;
   background: #fafafa;
 }
-button {
+.timer-button {
+  display: inline;
   align-items: center;
   gap: 10px;
   border-radius: 8px;
@@ -58,10 +59,10 @@ button {
   background: #4e75ff;
   color: #fff;
 }
-button:hover {
+.timer-button:hover {
   background: #6c8cff;
 }
-button:disabled {
+.timer-button:disabled {
   background: #cfcfcf;
   color: #989898;
 }
