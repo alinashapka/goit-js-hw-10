@@ -6,22 +6,22 @@ const button = document.querySelector("button[type='submit']");
 
 button.addEventListener("click", event => {
     event.preventDefault();
-    const delay = delayInput.value;
+    const delay = parseInt(delayInput.value);
         const selectedState = document.querySelector("input[name='state']:checked").value;
 
     const promise = new Promise((resolve, reject) => {
         setTimeout(() => {
             if (selectedState === "fulfilled") {
-                resolve();
+                resolve(delay);
             }
             else if (selectedState === "rejected") {
-                reject();
+                reject(delay);
             }
         }, delay)
     });
 
     promise
-        .then(() => {
+        .then(delay => {
             iziToast.show({
     title: "✅",
     message: `Fulfilled promise in ${delay}ms`,
@@ -30,7 +30,7 @@ button.addEventListener("click", event => {
     backgroundColor: "#59a10d",
 });
         })
-        .catch(() => {
+        .catch(delay => {
             iziToast.show({
     title: "❌",
     message: `Rejected promise in ${delay}ms`,
